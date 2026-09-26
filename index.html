@@ -1353,11 +1353,14 @@
                 </div>
             </div>
 
-            <form class="reveal" onsubmit="event.preventDefault(); alert('Спасибо! Я свяжусь с вами в ближайшее время.'); this.reset();">
-                <div class="field"><input type="text" placeholder="Ваше имя" required></div>
-                <div class="field"><input type="tel" placeholder="Телефон или Telegram" required></div>
-                <div class="field"><input type="email" placeholder="Email (необязательно)"></div>
-                <div class="field"><textarea placeholder="Расскажите кратко, с чем хотите разобраться"></textarea></div>
+            <form class="reveal" action="https://api.web3forms.com/submit" method="POST">
+				<input type="hidden" name="access_key" value="4d9904a0-6c76-4ab3-88de-a700015c5d3e">
+				<input type="hidden" name="subject" value="Новая заявка с сайта">
+				<input type="checkbox" name="botcheck" style="display:none">
+                <div class="field"><input type="text" name="name" placeholder="Ваше имя" required></div>
+                <div class="field"><input type="tel" name="phone" placeholder="Телефон или Telegram" required></div>
+                <div class="field"><input type="email" name="email" placeholder="Email (необязательно)"></div>
+                <div class="field"><textarea name="message" placeholder="Расскажите кратко, с чем хотите разобраться"></textarea></div>
                 <button type="submit" class="btn btn-primary" style="justify-self: start;">
                     Отправить заявку
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
