@@ -22,7 +22,7 @@
             min-height: 100dvh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #654ea3, #3a1c71, #1f1c2c);
-            background-size: 600% 600%;
+            background-size: 700% 700%; /* 600% 600%*/
             animation: gradientBG 22s ease infinite;
             color: #fff;
             overflow-x: hidden;
@@ -345,6 +345,21 @@
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
             white-space: nowrap;
+        }
+
+		.btn-blago { /* Добавление новой кнопки */
+            background: linear-gradient(135deg, #b48403 0%, #beb808 100%);
+            box-shadow: 0 10px 30px rgba(234, 192, 26, 0.4), inset 0 1px 0 rgba(239, 207, 81, 0.2);
+			display: flex;
+			width: fit-content;
+			margin: 0 auto;
+        }
+
+		.btn-blago:hover::before { left: 100%; }
+
+        .btn-blago:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(239, 84, 12, 0.6), inset 0 1px 0 rgba(250, 175, 1, 0.3);
         }
 
         .btn-primary {
@@ -960,18 +975,23 @@
             }
         }
 
-        @media (max-width: 720px) {
+        @media (max-width: 600px) { /* изменено с 720 */
             .nav-links li:not(:last-child) { display: none; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .hero-list { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
             .photo-float--1 { left: 0; }
             .photo-float--2 { right: 0; }
             .hero-actions { width: 100%; }
-            .hero-actions .btn { flex: 1; justify-content: center; }
+            .hero-actions .btn { flex: 1; justify-content: center;}
         }
+
+		@media (max-width: 440px) { /* скрыл кнопку "Смотреть услуги" */
+			.btn-secondary {display: none;}
+		}
+        
 
         @media (max-width: 380px) {
             .stats { grid-template-columns: 1fr 1fr; }
@@ -980,6 +1000,7 @@
             .photo-float span { font-size: 10px; }
         }
 
+	
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -1012,21 +1033,21 @@
     <section id="hero">
         <div class="hero-grid">
             <div class="hero-left">
-                <div class="hero-badge">Сейчас принимаю онлайн</div>
+                <!-- <div class="hero-badge">Сейчас принимаю онлайн</div> -->
                 <h1 class="hero-title">Верните себе <span>спокойствие и гармонию</span> внутри себя</h1>
                 <p class="hero-desc">
-                    Я Инна Пилипенко, практикующий психолог, наставник. Помогаю взрослым и подросткам справиться с тревогой,
-                    выгоранием и кризисами отношений. За 25 лет - 1100+ клиентов в личной и онлайн-терапии.
+					Здравствуйте! Рада видеть Вас на моей странице!<br> Я практикующий психолог, наставник, НЛП-практик.<br> Помогаю разобраться с нерешёнными вопросами, которые мешают жить
+					счастливой и наполненной жизнью, реализовывать свои таланты и получать удовольствие от каждого дня.
                 </p>
 
                 <ul class="hero-list">
                     <li>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Когнитивно-поведенческая терапия
+						НЛП-практик
                     </li>
                     <li>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Строгая конфиденциальность
+                        Работа с отношениями
                     </li>
                     <li>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1034,7 +1055,7 @@
                     </li>
                     <li>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Удобная оплата и отмена 24ч
+                        Индивидуальный подход к каждому запросу
                     </li>
                 </ul>
 
@@ -1055,11 +1076,11 @@
                         <span>лет практики</span>
                     </div>
                     <div class="stat">
-                        <strong>1100+</strong>
+                        <strong>2500+</strong>
                         <span>клиентов</span>
                     </div>
                     <div class="stat">
-                        <strong>4.95</strong>
+                        <strong>4.7</strong>
                         <span>средняя оценка</span>
                     </div>
                     <div class="stat">
@@ -1107,10 +1128,11 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                 </div>
-                <h3 class="card-title">Личная терапия</h3>
-                <p class="card-desc">Работа с тревогой, апатией, выгоранием, депрессивными состояниями, самооценкой и кризисами смысла.</p>
+                <h3 class="card-title">Отношения между мужчиной и женщиной</h3>
+                <p class="card-desc">Разбираем сценарии в личной жизни, учимся строить близость и доверие. Работаем с темой «как выйти замуж и быть
+				счастливой».</p>
                 <div class="card-footer">
-                    <div class="card-price">3 900 ₽<small>/60 мин</small></div>
+                    <div class="card-price">4 200 ₽<small>/60 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1119,10 +1141,10 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3 class="card-title">Семейная терапия</h3>
-                <p class="card-desc">Разрешение конфликтов, восстановление доверия, кризис измены, развод, отношения с родителями и детьми.</p>
+                <h3 class="card-title">Взаимопонимание с близкими</h3>
+                <p class="card-desc">Отношения с супругом, родителями, детьми, коллегами. Учимся слышать друг друга и выходить из конфликтов без потерь.</p>
                 <div class="card-footer">
-                    <div class="card-price">5 500 ₽<small>/90 мин</small></div>
+                    <div class="card-price">5 000 ₽<small>/90 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1131,10 +1153,11 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
                 </div>
-                <h3 class="card-title">Подростковая</h3>
-                <p class="card-desc">Сопровождение подростков 12-18 лет: буллинг, сепарация, учебная мотивация, самооценка, эмоции.</p>
+                <h3 class="card-title">Личная эффективность и ресурс</h3>
+                <p class="card-desc">Для тех, кто недоволен своей жизнью и хочет перемен, но не знает, с чего начать. Работаем с раздражением, апатией и
+				состоянием «ничего не радует».</p>
                 <div class="card-footer">
-                    <div class="card-price">3 600 ₽<small>/60 мин</small></div>
+                    <div class="card-price">4 200 ₽<small>/60 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1143,10 +1166,10 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
                 </div>
-                <h3 class="card-title">Профориентация</h3>
-                <p class="card-desc">Помощь в выборе специальности, карьеры, смене работы. Поиск сильных сторон, построение маршрута.</p>
+                <h3 class="card-title">Идентичность и самооценка</h3>
+                <p class="card-desc">Уверенность в себе, любовь к себе, понимание своих истинных потребностей и ценностей.</p>
                 <div class="card-footer">
-                    <div class="card-price">4 400 ₽<small>/60 мин</small></div>
+                    <div class="card-price">4 200 ₽<small>/60 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1155,10 +1178,10 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 </div>
-                <h3 class="card-title">Срочная помощь</h3>
-                <p class="card-desc">Разовая консультация при сильном стрессе, травмирующем событии, эмоциональной перегрузке - в день обращения.</p>
+                <h3 class="card-title">Воспитание и подростки</h3>
+                <p class="card-desc">Взаимопонимание с ребёнком, разрешение конфликтов с подростками, построение доверительных отношений в семье.</p>
                 <div class="card-footer">
-                    <div class="card-price">6 000 ₽<small>/80 мин</small></div>
+                    <div class="card-price">4 500 ₽<small>/60 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1167,10 +1190,10 @@
                 <div class="card-icon">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d5b8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
-                <h3 class="card-title">Абонемент 10 сессий</h3>
-                <p class="card-desc">Глубокая проработка запроса по системе КПТ. Фиксированная стоимость 10 встреч с экономией 15%.</p>
+                <h3 class="card-title">Предназначение и профориентация</h3>
+                <p class="card-desc">Поиск своего пути: выбор профессии, определение сильных сторон, раскрытие талантов и предназначения.</p>
                 <div class="card-footer">
-                    <div class="card-price">31 500 ₽<small>/всего</small></div>
+                    <div class="card-price">4 800 ₽<small>/60 мин</small></div>
                     <a href="#contact" class="card-link">Записаться →</a>
                 </div>
             </article>
@@ -1180,7 +1203,7 @@
     <section id="about">
         <div class="reveal">
             <span class="section-label">Обо мне</span>
-            <h2 class="section-title">Немного о моём пути и подходе</h2>
+            <h2 class="section-title">Немного о моем пути и подходе</h2>
         </div>
 
         <div class="about-grid">
@@ -1190,12 +1213,12 @@
 
             <div class="about-text reveal">
                 <p>
-                    Здравствуйте! Я Инна Пилипенко, практикующий психолог. Я верю, что любая сложность - это повод узнать себя лучше. Моя задача - создать для вас безопасное пространство,
-                    где можно честно говорить о том, что болит.
+					Здравствуйте! Я практикующий психолог, наставник и НЛП-практик. Моя задача - помочь вам увидеть этот вопрос, разобраться с ним и найти путь
+					к жизни, в которой вы чувствуете себя счастливым, ресурсным и реализованным человеком.
                 </p>
                 <p>
-                    В работе я сочетаю когнитивно-поведенческую терапию (КПТ), схема-терапию и элементы эмоционально-фокусированного
-                    подхода (EFT). Это позволяет работать как с текущими симптомами, так и с их глубинными причинами.
+					В работе я сочетаю психологические подходы с инструментами НЛП - это помогает не просто говорить о проблеме, а находить
+					конкретные, работающие способы её решения и закреплять новые модели поведения.
                 </p>
 
                 <ul class="about-list">
@@ -1205,13 +1228,24 @@
                     </li>
                     <li>
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        Сертификат КПТ - Институт «Гармония», 2007
+						Отношусь к людям с любовью и вниманием и верю в Ваши возможности.
                     </li>
                     <li>
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
-                        Супервизия 2 раза в месяц, личная терапия 25 лет
+						Разработчик и ведущая корпоративных и персональных тренингов по направлениям: личная эффективность, деловые коммуникации, управленческие навыки, работа с клиентами (продажи, сервис, переговоры).
                     </li>
                 </ul>
+
+				<br>
+				<a href="#" class="btn btn-blago">
+					<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+						<path d="M0 0h24v24H0z" fill="none" />
+						<path fill="currentColor"
+							d="M1 11h4v11H1zm15-7.75C16.65 2.49 17.66 2 18.7 2C20.55 2 22 3.45 22 5.3c0 2.27-2.91 4.9-6 7.7c-3.09-2.81-6-5.44-6-7.7C10 3.45 11.45 2 13.3 2c1.04 0 2.05.49 2.7 1.25M20 17h-7l-2.09-.73l.33-.94L13 16h2.82c.65 0 1.18-.53 1.18-1.18c0-.49-.31-.93-.77-1.11L8.97 11H7v9.02L14 22l8.01-3c-.01-1.1-.9-2-2.01-2" />
+					</svg>
+					Отблагодарить
+				</a>
+
             </div>
         </div>
     </section>
@@ -1220,53 +1254,60 @@
         <div class="reveal">
             <span class="section-label">Отзывы</span>
             <h2 class="section-title">Что говорят клиенты после работы</h2>
-            <p class="section-subtitle">На основе 470+ реальных отзывов за последние 2 года. Имена изменены по правилам конфиденциальности.</p>
+            <p class="section-subtitle">На основе отзывов за последние годы. Имена изменены по правилам конфиденциальности.</p>
         </div>
 
         <div class="reviews-grid">
             <div class="review reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">«Отзыв клиента № 1».</p>
+                <p class="review-text">Пришла с полным ощущением тупика в отношениях, не понимала, почему всё время натыкаюсь на одни и те же грабли. После
+				нескольких встреч будто прозрела - увидела свои сценарии и начала выстраивать отношения по-другому. Через полгода вышла
+				замуж за человека, с которым действительно чувствую себя счастливой. Спасибо огромное!</p>
                 <div class="review-author">
                     <div class="review-avatar">ЕК</div>
                     <div class="review-meta">
                         <strong>Екатерина, 29</strong>
-                        <span>Личная терапия</span>
+                        <span>Отношения между мужчиной и женщиной</span>
                     </div>
                 </div>
             </div>
 
             <div class="review reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">«Отзыв клиента № 2».</p>
+                <p class="review-text">«Обратилась, когда с подростком-сыном совсем перестали находить общий язык - одни крики и хлопанье дверью. Благодаря
+				работе с психологом научилась слышать его по-настоящему, а не просто ждать своей очереди сказать. Сейчас у нас впервые
+				за долгое время тёплые, доверительные отношения. Очень благодарна за поддержку!»</p>
                 <div class="review-author">
                     <div class="review-avatar">МС</div>
                     <div class="review-meta">
-                        <strong>Мария и Сергей, 34</strong>
-                        <span>Семейная терапия</span>
+                        <strong>Ольга В, 46</strong>
+                        <span>Воспитания и подростки</span>
                     </div>
                 </div>
             </div>
 
             <div class="review reveal">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">«Отзыв клиента № 3».</p>
+                <p class="review-text">«Долго жила с ощущением, что топчусь на месте: работа не радует, ничего не хочется, а куда двигаться - непонятно. На
+				сессиях помогли увидеть мои сильные стороны и разобраться, чего я хочу на самом деле. Сменила профессию и впервые за
+				много лет чувствую вкус к жизни. Инна, большое спасибо Вам за такой бережный и внимательный подход!»</p>
                 <div class="review-author">
                     <div class="review-avatar">ОВ</div>
                     <div class="review-meta">
-                        <strong>Ольга В., 46</strong>
-                        <span>Подростковая терапия</span>
+                        <strong>Мария С, 34</strong>
+                        <span>Предназначение и профориентация</span>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <section id="contact">
         <div class="reveal">
             <span class="section-label">Контакты</span>
             <h2 class="section-title">Записаться на первую встречу</h2>
-            <p class="section-subtitle">Ответю в течение 2 часов в рабочее время (пн-пт, 10:00-20:00 МСК). Первая диагностическая сессия - 30 минут бесплатно.</p>
+            <p class="section-subtitle">Отвечу в течение 2 часов в рабочее время (пн-пт, 10:00-20:00 МСК).</p>
         </div>
 
         <div class="contact-wrap">
@@ -1277,7 +1318,7 @@
                     </div>
                     <div>
                         <div class="contact-label">Телефон / Telegram / Max</div>
-                        <div class="contact-value">+7 (978) 111-11-11</div>
+                        <div class="contact-value">+7 (978) 833-08-57</div>
                     </div>
                 </a>
 
@@ -1287,7 +1328,7 @@
                     </div>
                     <div>
                         <div class="contact-label">Email</div>
-                        <div class="contact-value">@mail.ru</div>
+                        <div class="contact-value">ak963@mail.ru</div>
                     </div>
                 </a>
 
@@ -1297,7 +1338,7 @@
                     </div>
                     <div>
                         <div class="contact-label">Telegram</div>
-                        <div class="contact-value">#</div>
+                        <div class="contact-value">@psicholog_inna</div>
                     </div>
                 </a>
 
@@ -1329,13 +1370,13 @@
         <div class="footer-inner">
             <div>© 2026 Инна Пилипенко · Все права защищены · Политика конфиденциальности</div>
             <div class="socials">
-                <a href="#" aria-label="Telegram">
+                <a href="https://t.me/psicholog_inna" aria-label="Telegram">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.99 4.93a10 10 0 0 1-2.88.79 5.03 5.03 0 0 0 2.2-2.77 10.06 10.06 0 0 1-3.17 1.21 5.02 5.02 0 0 0-8.55 4.57A14.25 14.25 0 0 1 3 3.89a5.02 5.02 0 0 0 1.55 6.7 5 5 0 0 1-2.27-.63v.06a5.03 5.03 0 0 0 4.03 4.92 5.02 5.02 0 0 1-2.27.09 5.03 5.03 0 0 0 4.7 3.49A10.07 10.07 0 0 1 2 18.55a14.2 14.2 0 0 0 7.69 2.26c9.22 0 14.27-7.64 14.27-14.26 0-.22 0-.43-.02-.65A10.12 10.12 0 0 0 21.99 4.93z"></path></svg>
                 </a>
                 <a href="#" aria-label="WhatsApp">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                 </a>
-                <a href="#" aria-label="VK">
+                <a href="https://vk.ru/psichologin" aria-label="VK">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.67 4H8.33A4.33 4.33 0 0 0 4 8.33v7.34A4.33 4.33 0 0 0 8.33 20h7.34A4.33 4.33 0 0 0 20 15.67V8.33A4.33 4.33 0 0 0 15.67 4z"/><path d="M12 17c-3.33 0-6-2.35-6-5.24 0-1.4.58-2.67 1.8-3.56.73-.52 1.6-.78 2.4-.72.57.03 1.09.23 1.54.57L12 9.52l.26-.47a3.27 3.27 0 0 1 1.54-.57c.8-.06 1.67.2 2.4.72C17.42 9.09 18 10.36 18 11.76 18 14.65 15.33 17 12 17z"/></svg>
                 </a>
             </div>
