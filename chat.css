@@ -1,8 +1,8 @@
 /* ===== Кнопка чата ===== */
 #chat-toggle {
 	position: fixed;
-	bottom: 85px;
-	right: 24px; 
+	bottom: 24px;
+	right: 7px; 
 	display: flex;
 	align-items: center;
 	gap: 10px;
