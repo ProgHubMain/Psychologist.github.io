@@ -1105,6 +1105,16 @@ footer {
 	}
 }
 
+@media (max-width: 720px) {
+	.footer-inner {
+		justify-content: center;
+	}
+
+	.Inna {
+		text-align: center;
+	}
+}
+
 
 .reveal {
 	opacity: 0;
