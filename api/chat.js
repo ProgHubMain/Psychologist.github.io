@@ -13,8 +13,8 @@ export default async function handler(req, res) {
 
   try {
     const client = new GigaChat({
-      credentials: process.env.GIGACHAT_KEY, // ключ из переменных окружения Vercel
-      scope: 'GIGACHAT_API_PERS',            // для физических лиц
+      credentials: process.env.GIGACHAT_KEY, 
+      scope: 'GIGACHAT_API_PERS',            
       httpsAgent,
     });
 
