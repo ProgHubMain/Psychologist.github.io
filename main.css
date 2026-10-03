@@ -318,11 +318,20 @@ section {
 }
 
 .hero-desc {
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* !!! */
 	font-size: clamp(14px, 2.3vw, 19px);
-	line-height: 1.75;
+	line-height: 1.55; /* line-height: 1.75; */
 	color: rgba(255, 255, 255, 0.75);
 	margin-bottom: clamp(28px, 5vw, 44px);
 	max-width: 540px;
+
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 16px 20px;
 }
 
 .hero-list {
