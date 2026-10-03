@@ -1,0 +1,106 @@
+Стиль осенние листья
+
+--- Скрипт ---
+<script>
+	const particlesContainer = document.getElementById('particles');
+		if (particlesContainer) {
+			const particleCount = window.innerWidth < 500 ? 18 : (window.innerWidth < 900 ? 28 : 40);
+
+			const leafColors = [
+				'rgba(200, 120, 50, 0.8)',
+				'rgba(180, 80, 40, 0.8)',
+				'rgba(220, 170, 60, 0.8)',
+				'rgba(140, 90, 40, 0.8)',
+				'rgba(170, 150, 60, 0.8)'
+			];
+
+			for (let i = 0; i < particleCount; i++) {
+				const p = document.createElement('div');
+				p.className = 'particle';
+
+				p.style.left = Math.random() * 100 + '%';
+				p.style.animationDelay = Math.random() * 15 + 's';
+				p.style.animationDuration = (8 + Math.random() * 12) + 's';
+
+				const w = (5 + Math.random() * 6) + 'px';
+				const h = (9 + Math.random() * 10) + 'px';
+				p.style.width = w;
+				p.style.height = h;
+
+				p.style.background = leafColors[Math.floor(Math.random() * leafColors.length)];
+				p.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+				particlesContainer.appendChild(p);
+			}
+		}
+</script>
+
+
+--- CSS стили ---
+/* Падающие листья, осенние листья - частицы (начало)*/
+.particles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.particle {
+	position: absolute;
+	top: -10%;
+	background: rgba(180, 120, 60, 0.75);
+	border-radius: 0 100% 0 100%;
+	animation: fall linear infinite;
+	will-change: transform;
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(-10vh) translateX(0) rotate(0deg);
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 1;
+	}
+
+	50% {
+		transform: translateY(50vh) translateX(30px) rotate(180deg);
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(110vh) translateX(-30px) rotate(360deg);
+		opacity: 0;
+	}
+}
+/* Падающие листья, осенние листья - частицы (конец)*/
+
+/* для body */
+background: linear-gradient(-45deg, #2b0f0f, #4a1a1a, #6b2a1a, #8a3d1a, #a85a2a, #6b2a1a);
+
+
+
+/* для изменения стиля - под светлую тему (так обозначаются переменные для дальнейшего использования)) */
+:root {
+	--paper: #f5f1ea;
+	--paper-soft: #faf7f1;
+	--ink: #2c2a26;
+	--ink-soft: #4a463f;
+	--muted: #8a857c;
+	--muted-light: #b5afa4;
+	--sage: #7a8b6f;
+	--sage-soft: #e8ede4;
+	--clay: #c17b5c;
+	--clay-dark: #a86245;
+	--line: #e0d9cc;
+	--line-strong: #d0c7b6;
+	--white: #ffffff;
+}

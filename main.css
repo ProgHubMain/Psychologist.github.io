@@ -9,30 +9,15 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* для изменения стиля - под светлую тему */
-:root {
-	--paper: #f5f1ea;
-	--paper-soft: #faf7f1;
-	--ink: #2c2a26;
-	--ink-soft: #4a463f;
-	--muted: #8a857c;
-	--muted-light: #b5afa4;
-	--sage: #7a8b6f;
-	--sage-soft: #e8ede4;
-	--clay: #c17b5c;
-	--clay-dark: #a86245;
-	--line: #e0d9cc;
-	--line-strong: #d0c7b6;
-	--white: #ffffff;
-}
-
 body {
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
 	min-height: 100dvh;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #654ea3, #3a1c71, #1f1c2c);
-	background-size: 700% 700%; /* 600% 600%*/
+	/* background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #654ea3, #3a1c71, #1f1c2c); */
+	/* background-size: 700% 700%; */ /* 600% 600% */
+	/* background: #061c7b; */
+	background: #342F66;
 	animation: gradientBG 22s ease infinite;
 	color: #fff;
 	overflow-x: hidden;
@@ -41,18 +26,16 @@ body {
 	position: relative;
 }
 
+.heart {
+	animation: beat 1s infinite;
+}
+
+@keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); }}
+
 @keyframes gradientBG {
-	0% {
-		background-position: 0% 50%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	100% {
-		background-position: 0% 50%;
-	}
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
 }
 
 .particles {
@@ -94,7 +77,7 @@ body {
 	}
 }
 
-/* .glow-top {
+.glow-top {
 	position: fixed;
 	top: -10%;
 	left: 10%;
@@ -120,7 +103,7 @@ body {
 	z-index: 0;
 	animation: pulse 8s ease-in-out infinite reverse;
 	pointer-events: none;
-} */
+}
 
 @keyframes pulse {
 
@@ -232,7 +215,7 @@ section {
 	z-index: 2;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: clamp(50px, 10vw, 110px) clamp(20px, 5vw, 40px);
+	padding: clamp(50px, 10vw, 60px) clamp(20px, 5vw, 40px); /* clamp(50px, 10vw, 110px) clamp(20px, 5vw, 40px); */
 }
 
 .section-label {
@@ -390,24 +373,6 @@ section {
 	-webkit-tap-highlight-color: transparent;
 	touch-action: manipulation;
 	white-space: nowrap;
-}
-
-.btn-blago {
-	/* Добавление новой кнопки */
-	background: linear-gradient(135deg, #b48403 0%, #beb808 100%);
-	box-shadow: 0 10px 30px rgba(234, 192, 26, 0.4), inset 0 1px 0 rgba(239, 207, 81, 0.2);
-	display: flex;
-	width: fit-content;
-	margin: 0 auto;
-}
-
-.btn-blago:hover::before {
-	left: 100%;
-}
-
-.btn-blago:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 15px 40px rgba(239, 84, 12, 0.6), inset 0 1px 0 rgba(250, 175, 1, 0.3);
 }
 
 .btn-primary {
