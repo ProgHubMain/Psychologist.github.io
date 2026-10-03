@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <div class="particles" id="particles"></div>
-    <div class="glow-top"></div>
-    <div class="glow-bottom"></div>
+    <div class="particles" id="particles"></div> <!-- частицы -->
+    <!-- <div class="glow-top"></div> !--> <!-- glow/свечение -->
+    <!-- <div class="glow-bottom"></div> !--> <!-- glow/свечение -->
 
     <header>
         <nav class="nav">
@@ -30,7 +30,7 @@
     <section id="hero">
         <div class="hero-grid">
             <div class="hero-left">
-                <!-- <div class="hero-badge">Сейчас принимаю онлайн</div> -->
+                <div class="hero-badge">Принимаю онлайн</div>
                 <h1 class="hero-title">Верните себе <span>спокойствие и гармонию</span> внутри себя</h1>
                 <p class="hero-desc">
 					Здравствуйте! Рада видеть Вас на моей странице!<br> Я практикующий психолог, наставник, НЛП-практик.<br> Помогаю разобраться с нерешёнными вопросами, которые мешают жить
@@ -422,21 +422,23 @@
     </footer>
 
     <script>
-        // --- Частицы ---
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = window.innerWidth < 500 ? 26 : (window.innerWidth < 900 ? 36 : 50);
-        for (let i = 0; i < particleCount; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.left = Math.random() * 100 + '%';
-            p.style.animationDelay = Math.random() * 20 + 's';
-            p.style.animationDuration = (10 + Math.random() * 22) + 's';
-            const s = (3 + Math.random() * 7) + 'px';
-            p.style.width = s;
-            p.style.height = s;
-            p.style.opacity = 0.25 + Math.random() * 0.5;
-            particlesContainer.appendChild(p);
-        }
+	// --- Частицы ---
+		const particlesContainer = document.getElementById('particles');
+			if (particlesContainer) { // добавилось if (particlesContainer) {}
+				const particleCount = window.innerWidth < 500 ? 26 : (window.innerWidth < 900 ? 36 : 50);
+				for (let i = 0; i < particleCount; i++) {
+					const p = document.createElement('div');
+					p.className = 'particle';
+					p.style.left = Math.random() * 100 + '%';
+					p.style.animationDelay = Math.random() * 20 + 's';
+					p.style.animationDuration = (10 + Math.random() * 22) + 's';
+					const s = (3 + Math.random() * 7) + 'px';
+					p.style.width = s;
+					p.style.height = s;
+					p.style.opacity = 0.25 + Math.random() * 0.5;
+					particlesContainer.appendChild(p);
+				}
+			}
 
         // --- Reveal при скролле ---
         const revealEls = document.querySelectorAll('.reveal');

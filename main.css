@@ -94,7 +94,7 @@ body {
 	}
 }
 
-.glow-top {
+/* .glow-top {
 	position: fixed;
 	top: -10%;
 	left: 10%;
@@ -120,7 +120,7 @@ body {
 	z-index: 0;
 	animation: pulse 8s ease-in-out infinite reverse;
 	pointer-events: none;
-}
+} */
 
 @keyframes pulse {
 
